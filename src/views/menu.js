@@ -2,19 +2,24 @@
  * メニュー画面
  */
 export class Menu extends Phaser.Scene {
-    constructor () {
+    constructor() {
         super('menu');
     }
 
-    preload () {
+    preload() {
     }
 
-    create () {
+    create() {
         const bg = this.add.image(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 'bg');
-        const timerButton = this.add.image(100, 50, 'button_timer')
+        const timerText = this.add.text(40, 30, 'タイマー', {fontFamily: 'sans-serif', fontSize: '32px', fill: '#000'})
             .setInteractive()
             .on('pointerup', () => {
                 this.scene.start('timer');
+            });
+        const buttonText = this.add.text(40, 100, 'ボタン画像', {fontFamily: 'sans-serif', fontSize: '32px', fill: '#000'})
+            .setInteractive()
+            .on('pointerup', () => {
+                this.scene.start('button');
             });
     }
 }

@@ -2,16 +2,16 @@
  * 画像読み込み初期化
  */
 export class Preload extends Phaser.Scene {
-    constructor () {
+    constructor() {
         super('preload');
     }
 
-    preload () {
+    preload() {
         this.load.image('bg', 'assets/bg_default.png');
-        this.load.image('button_timer', 'assets/button_timer.png');
+        this.load.spritesheet('button', 'assets/button.png', { frameWidth: 100, frameHeight: 50 });
     }
 
-    create () {
+    create() {
         this.resize();
         this.scene.start('menu');
     }
